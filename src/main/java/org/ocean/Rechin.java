@@ -9,7 +9,7 @@ class Rechin extends AnimaleAcvatice {
     // Constructor fără argumente
     public Rechin() {
         super();
-        // Rechinii sunt vertebrate, nu mamifere, cu reproducere ovovivipară/ovipară
+        // Rechinii sunt vertebrate, nu mamifere, cu reproducere ovovivipară
         super.setMamifer(false);
         super.setVertebrat(true);
         super.setModReproducere("Ovovivipar");
@@ -20,9 +20,9 @@ class Rechin extends AnimaleAcvatice {
 
     // Constructor cu toate argumentele
     public Rechin(String nume, String specie, double greutate, double lungime, String culoare,
-                  int numarDinti, boolean periculos, String tipRechin) {
-        // Rechinii sunt vertebrate, nu mamifere, cu reproducere ovovivipară/ovipară
-        super(nume, specie, greutate, lungime, culoare, false, true, "Ovovivipar");
+                  int varsta, int numarDinti, boolean periculos, String tipRechin) {
+        // Rechinii sunt vertebrate, nu mamifere, cu reproducere ovovivipară
+        super(nume, specie, greutate, lungime, culoare, false, true, "Ovovivipar", varsta);
         this.numarDinti = numarDinti;
         this.periculos = periculos;
         this.tipRechin = tipRechin;
