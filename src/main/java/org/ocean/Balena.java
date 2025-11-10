@@ -2,7 +2,7 @@ package org.ocean;
 
 // Clasa Balena
 class Balena extends AnimaleAcvatice {
-    private int varsta;
+    private double cantitateApaExpulzata;
     private String tipHrana;
     private int adancimeMaxima;
 
@@ -13,17 +13,17 @@ class Balena extends AnimaleAcvatice {
         super.setMamifer(true);
         super.setVertebrat(true);
         super.setModReproducere("Vivipar");
-        this.varsta = 0;
+        this.cantitateApaExpulzata = 0.0;
         this.tipHrana = "Necunoscută";
         this.adancimeMaxima = 0;
     }
 
     // Constructor cu toate argumentele
     public Balena(String nume, String specie, double greutate, double lungime, String culoare,
-                  int varsta, String tipHrana, int adancimeMaxima) {
+                  int varsta, double cantitateApaExpulzata, String tipHrana, int adancimeMaxima) {
         // Balenele sunt mamifere vertebrate cu reproducere vivipară
-        super(nume, specie, greutate, lungime, culoare, true, true, "Vivipar");
-        this.varsta = varsta;
+        super(nume, specie, greutate, lungime, culoare, true, true, "Vivipar", varsta);
+        this.cantitateApaExpulzata = cantitateApaExpulzata;
         this.tipHrana = tipHrana;
         this.adancimeMaxima = adancimeMaxima;
     }
@@ -31,18 +31,20 @@ class Balena extends AnimaleAcvatice {
     // Constructor de copiere
     public Balena(Balena other) {
         super(other);
-        this.varsta = other.varsta;
+        this.cantitateApaExpulzata = other.cantitateApaExpulzata;
         this.tipHrana = other.tipHrana;
         this.adancimeMaxima = other.adancimeMaxima;
     }
 
     // Getters
-    public int getVarsta() { return varsta; }
+    public double getCantitateApaExpulzata() { return cantitateApaExpulzata; }
     public String getTipHrana() { return tipHrana; }
     public int getAdancimeMaxima() { return adancimeMaxima; }
 
     // Setters
-    public void setVarsta(int varsta) { this.varsta = varsta; }
+    public void setCantitateApaExpulzata(double cantitateApaExpulzata) {
+        this.cantitateApaExpulzata = cantitateApaExpulzata;
+    }
     public void setTipHrana(String tipHrana) { this.tipHrana = tipHrana; }
     public void setAdancimeMaxima(int adancimeMaxima) { this.adancimeMaxima = adancimeMaxima; }
 
@@ -59,7 +61,7 @@ class Balena extends AnimaleAcvatice {
     @Override
     public String toString() {
         return "Balena{" +
-                "varsta=" + varsta +
+                "cantitateApaExpulzata=" + cantitateApaExpulzata +
                 ", tipHrana='" + tipHrana + '\'' +
                 ", adancimeMaxima=" + adancimeMaxima +
                 ", " + super.toString() +
