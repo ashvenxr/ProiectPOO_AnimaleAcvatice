@@ -24,7 +24,6 @@ class Moluste extends AnimaleAcvatice {
     public Moluste(String nume, String specie, double greutate, double lungime, String culoare,
                    int varsta, boolean areCochilie, int numarTentacule,
                    String tipCochilie, double vitezaMiscare) {
-        // Molustele nu sunt mamifere, nu sunt vertebrate și au reproducere ovipară
         super(nume, specie, greutate, lungime, culoare, false, false, "Ovipar", varsta);
         this.areCochilie = areCochilie;
         this.numarTentacule = numarTentacule;
