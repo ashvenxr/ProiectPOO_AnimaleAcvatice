@@ -3,9 +3,7 @@ package org.ocean;
 // Clasa de test
 public class Main {
     public static void main(String[] args) {
-        System.out.println("╔════════════════════════════════════════════════════════════════╗");
-        System.out.println("║           TEST CONSTRUCTORI - ANIMALE ACVATICE                 ║");
-        System.out.println("╚════════════════════════════════════════════════════════════════╝\n");
+        System.out.println("~TEST CONSTRUCTORI - ANIMALE ACVATICE~");
 
         // ========== TEST CONSTRUCTORI BALENA ==========
         System.out.println("========== BALENA ==========\n");
@@ -96,30 +94,27 @@ public class Main {
         System.out.println();
 
         // ========== TEST METODE ABSTRACTE ==========
-        System.out.println("\n╔════════════════════════════════════════════════════════════════╗");
-        System.out.println("║              TEST METODE ABSTRACTE (COMPORTAMENT)              ║");
-        System.out.println("╚════════════════════════════════════════════════════════════════╝\n");
+
+        System.out.println("\n~TEST METODE ABSTRACTE (COMPORTAMENT)~");
 
         System.out.println("=== BALENA ===");
-        System.out.println("Tip comportament: " + balena2.getTipComportament());
+        System.out.println("Tip Biologic: " + balena2.getTipBiologic());
         balena2.emiteComportament();
 
         System.out.println("\n=== RECHIN ===");
-        System.out.println("Tip comportament: " + rechin2.getTipComportament());
+        System.out.println("Tip Biologic: " + rechin2.getTipBiologic());
         rechin2.emiteComportament();
 
         System.out.println("\n=== PEȘTE TROPICAL ===");
-        System.out.println("Tip comportament: " + peste2.getTipComportament());
+        System.out.println("Tip Biologic: " + peste2.getTipBiologic());
         peste2.emiteComportament();
 
         System.out.println("\n=== MOLUSCĂ ===");
-        System.out.println("Tip comportament: " + mollusca2.getTipComportament());
+        System.out.println("Tip Biologic: " + mollusca2.getTipBiologic());
         mollusca2.emiteComportament();
 
         // ========== TEST CARACTERISTICI BIOLOGICE ==========
-        System.out.println("\n\n╔════════════════════════════════════════════════════════════════╗");
-        System.out.println("║            TEST CARACTERISTICI BIOLOGICE                       ║");
-        System.out.println("╚════════════════════════════════════════════════════════════════╝\n");
+        System.out.println("\n~TEST CARACTERISTICI BIOLOGICE~");
 
         System.out.println("=== BALENA (Bubu) ===");
         System.out.println("  - Nume: " + balena2.getNume());
@@ -179,21 +174,6 @@ public class Main {
         System.out.println("  - Tip cochilie: " + mollusca2.getTipCochilie());
         System.out.println("  - Viteză mișcare: " + mollusca2.getVitezaMiscare() + " km/h");
 
-        // ========== REZUMAT FINAL ==========
-        System.out.println("\n\n╔════════════════════════════════════════════════════════════════╗");
-        System.out.println("║                      REZUMAT FINAL                             ║");
-        System.out.println("╚════════════════════════════════════════════════════════════════╝\n");
-
-        System.out.println("✓ Clasa abstractă AnimaleAcvatice cu 2 metode abstracte implementate");
-        System.out.println("✓ 4 clase derivate: Balena, Rechin, PestiTropicali, Moluste");
-        System.out.println("✓ Total câmpuri: 9 (clasa abstractă) + 3-4 (fiecare clasă derivată)");
-        System.out.println("✓ Fiecare clasă are:");
-        System.out.println("  - Constructor fără argumente");
-        System.out.println("  - Constructor cu toate argumentele");
-        System.out.println("  - Constructor de copiere");
-        System.out.println("  - Metoda toString()");
-        System.out.println("  - Metode get și set pentru toate câmpurile");
-        System.out.println("  - Implementare metode abstracte: getTipComportament() și emiteComportament()");
-        System.out.println("\n✓ Testate câte 3 instanțe pentru fiecare clasă cu toți constructorii!");
     }
+
 }

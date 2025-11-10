@@ -53,7 +53,7 @@ abstract class AnimaleAcvatice {
     }
 
     // Metode abstracte care vor fi implementate în clasele derivate
-    public abstract String getTipComportament();
+    public abstract String getTipBiologic();
     public abstract void emiteComportament();
 
     // Getters

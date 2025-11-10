@@ -53,7 +53,7 @@ class Moluste extends AnimaleAcvatice {
     public void setVitezaMiscare(double vitezaMiscare) { this.vitezaMiscare = vitezaMiscare; }
 
     @Override
-    public String getTipComportament() {
+    public String getTipBiologic() {
         return "Nevertebrat marin";
     }
 

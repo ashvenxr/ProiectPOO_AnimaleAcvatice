@@ -53,7 +53,7 @@ class PestiTropicali extends AnimaleAcvatice {
     public void setHabitatRecif(String habitatRecif) { this.habitatRecif = habitatRecif; }
 
     @Override
-    public String getTipComportament() {
+    public String getTipBiologic() {
         return "Pește tropical de recif";
     }
 

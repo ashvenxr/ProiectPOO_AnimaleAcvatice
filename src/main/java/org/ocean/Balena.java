@@ -49,7 +49,7 @@ class Balena extends AnimaleAcvatice {
     public void setAdancimeMaxima(int adancimeMaxima) { this.adancimeMaxima = adancimeMaxima; }
 
     @Override
-    public String getTipComportament() {
+    public String getTipBiologic() {
         return "Mamifer marin";
     }
 

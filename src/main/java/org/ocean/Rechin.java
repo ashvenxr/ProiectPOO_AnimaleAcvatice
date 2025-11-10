@@ -47,7 +47,7 @@ class Rechin extends AnimaleAcvatice {
     public void setTipRechin(String tipRechin) { this.tipRechin = tipRechin; }
 
     @Override
-    public String getTipComportament() {
+    public String getTipBiologic() {
         return "Pește cartilaginos";
     }
 
