@@ -175,5 +175,4 @@ public class Main {
         System.out.println("  - Viteză mișcare: " + mollusca2.getVitezaMiscare() + " km/h");
 
     }
-
 }
