@@ -10,6 +10,7 @@ abstract class AnimaleAcvatice {
     private boolean mamifer;
     private boolean vertebrat;
     private String modReproducere;
+    private int varsta;
 
     // Constructor fără argumente
     public AnimaleAcvatice() {
@@ -21,11 +22,12 @@ abstract class AnimaleAcvatice {
         this.mamifer = false;
         this.vertebrat = false;
         this.modReproducere = "Necunoscut";
+        this.varsta = 0;
     }
 
     // Constructor cu toate argumentele
     public AnimaleAcvatice(String nume, String specie, double greutate, double lungime,
-                           String culoare, boolean mamifer, boolean vertebrat, String modReproducere) {
+                           String culoare, boolean mamifer, boolean vertebrat, String modReproducere, int varsta) {
         this.nume = nume;
         this.specie = specie;
         this.greutate = greutate;
@@ -34,6 +36,7 @@ abstract class AnimaleAcvatice {
         this.mamifer = mamifer;
         this.vertebrat = vertebrat;
         this.modReproducere = modReproducere;
+        this.varsta = varsta;
     }
 
     // Constructor de copiere
@@ -46,6 +49,7 @@ abstract class AnimaleAcvatice {
         this.mamifer = other.mamifer;
         this.vertebrat = other.vertebrat;
         this.modReproducere = other.modReproducere;
+        this.varsta = other.varsta;
     }
 
     // Metode abstracte care vor fi implementate în clasele derivate
@@ -61,6 +65,7 @@ abstract class AnimaleAcvatice {
     public boolean isMamifer() { return mamifer; }
     public boolean isVertebrat() { return vertebrat; }
     public String getModReproducere() { return modReproducere; }
+    public int getVarsta() { return varsta; }
 
     // Setters
     public void setNume(String nume) { this.nume = nume; }
@@ -71,6 +76,7 @@ abstract class AnimaleAcvatice {
     public void setMamifer(boolean mamifer) { this.mamifer = mamifer; }
     public void setVertebrat(boolean vertebrat) { this.vertebrat = vertebrat; }
     public void setModReproducere(String modReproducere) { this.modReproducere = modReproducere; }
+    public void setVarsta(int varsta) { this.varsta = varsta; }
 
     @Override
     public String toString() {
@@ -83,6 +89,7 @@ abstract class AnimaleAcvatice {
                 ", mamifer=" + mamifer +
                 ", vertebrat=" + vertebrat +
                 ", modReproducere='" + modReproducere + '\'' +
+                ", varsta=" + varsta +
                 '}';
     }
 }
