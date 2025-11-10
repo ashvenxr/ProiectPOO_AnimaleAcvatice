@@ -10,7 +10,7 @@ class PestiTropicali extends AnimaleAcvatice {
     // Constructor fără argumente
     public PestiTropicali() {
         super();
-        // Peștii tropicali nu sunt mamifere, sunt vertebrați cu reproducere ovipară
+        // Peștii tropicali nu sunt mamifere, sunt vertebrate cu reproducere ovipară
         super.setMamifer(false);
         super.setVertebrat(true);
         super.setModReproducere("Ovipar");
@@ -24,7 +24,6 @@ class PestiTropicali extends AnimaleAcvatice {
     public PestiTropicali(String nume, String specie, double greutate, double lungime, String culoare,
                           int varsta, String tipAripioare, boolean veninosi,
                           double temperaturaOptima, String habitatRecif) {
-        // Peștii tropicali nu sunt mamifere, sunt vertebrați cu reproducere ovipară
         super(nume, specie, greutate, lungime, culoare, false, true, "Ovipar", varsta);
         this.tipAripioare = tipAripioare;
         this.veninosi = veninosi;
