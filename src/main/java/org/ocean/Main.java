@@ -4,9 +4,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 // Clasa de test
+
 public class Main {
     // ArrayList pentru cele 4 clase
-    //.
+
+    private static ArrayList<Balena> listaBalene = new ArrayList<>();
+    private static ArrayList<Rechin> listaRechini = new ArrayList<>();
+
     private static ArrayList<PestiTropicali> listaPesti = new ArrayList<>();
     private static ArrayList<Moluste> listaMoluste = new ArrayList<>();
 
@@ -185,13 +189,20 @@ public class Main {
 
         // ~ CERINTELE 3-4 ~
         // Populam vectorii cu 10 instanțe fiecare
-        //.
+
+        initializeazaBalene();
+        initializeazaRechini();
+
         initializeazaPesti();
         initializeazaMoluste();
 
         // Afisare instante
 
-        //.
+        System.out.println("=== LISTA BALENE ===");
+        afiseazaBalene();
+
+        System.out.println("\n=== LISTA RECHINI ===");
+        afiseazaRechini();
 
         System.out.println("=== LISTA PEȘTI TROPICALI ===");
         afiseazaPesti();
@@ -199,10 +210,16 @@ public class Main {
         System.out.println("\n=== LISTA MOLUSTE ===");
         afiseazaMoluste();
 
+
+
         // Filtrare cu conditii de la utilizator
         Scanner scanner = new Scanner(System.in);
 
-        //.
+        System.out.println("\n=== FILTRARE BALENE ===");
+        filtreazaBalene(scanner);
+
+        System.out.println("\n=== FILTRARE RECHINI ===");
+        filtreazaRechini(scanner);
 
         System.out.println("\n=== FILTRARE PEȘTI TROPICALI ===");
         filtreazaPesti(scanner);
@@ -214,8 +231,52 @@ public class Main {
     }
 
     // Inițializare vector balene cu 10 instanțe
+    private static void initializeazaBalene() {
+        listaBalene.add(new Balena("Bubu", "Physeter macrocephalus", 45000.0, 1600.0, "Gri închis",
+                25, 300.0, "Calmari giganți", 2000));
+        listaBalene.add(new Balena("Mira", "Balaenoptera musculus", 150000.0, 2500.0, "Albastru-cenușiu",
+                40, 400.0, "Krill", 500));
+        listaBalene.add(new Balena("Rumi", "Megaptera novaeangliae", 30000.0, 1500.0, "Negru cu alb",
+                15, 250.0, "Pești mici și krill", 200));
+        listaBalene.add(new Balena("Pochita", "Orcinus orca", 5500.0, 800.0, "Negru cu alb",
+                30, 150.0, "Pești, foci, balene mici", 300));
+        listaBalene.add(new Balena("Yuuji", "Delphinapterus leucas", 1500.0, 500.0, "Alb",
+                20, 80.0, "Pești, crustacee", 700));
+        listaBalene.add(new Balena("Nobara", "Eschrichtius robustus", 35000.0, 1400.0, "Gri cu pete",
+                35, 200.0, "Amfipode", 120));
+        listaBalene.add(new Balena("Power", "Balaenoptera acutorostrata", 10000.0, 900.0, "Gri închis",
+                18, 100.0, "Krill și pești mici", 350));
+        listaBalene.add(new Balena("Eren", "Monodon monoceros", 1600.0, 500.0, "Gri cu pete",
+                25, 70.0, "Pești arctici", 800));
+        listaBalene.add(new Balena("Denji", "Balaena mysticetus", 100000.0, 2000.0, "Negru",
+                100, 350.0, "Krill și copepode", 200));
+        listaBalene.add(new Balena("Reze", "Eubalaena glacialis", 70000.0, 1500.0, "Negru",
+                50, 300.0, "Zooplancton", 300));
+    }
 
     // Inițializare vector rechini cu 10 instanțe
+    private static void initializeazaRechini() {
+        listaRechini.add(new Rechin("Jinu", "Carcharodon carcharias", 2000.0, 600.0, "Gri cu burta albă",
+                15, 300, true, "Rechin alb"));
+        listaRechini.add(new Rechin("Abby", "Sphyrna mokarran", 450.0, 500.0, "Gri-maroniu",
+                20, 280, true, "Rechin ciocan"));
+        listaRechini.add(new Rechin("Baby", "Galeocerdo cuvier", 900.0, 500.0, "Gri cu dungi",
+                25, 350, true, "Rechin tigru"));
+        listaRechini.add(new Rechin("Joseph", "Rhincodon typus", 20000.0, 1200.0, "Gri cu pete albe",
+                70, 300, false, "Rechin balenă"));
+        listaRechini.add(new Rechin("Caesar", "Carcharhinus leucas", 300.0, 350.0, "Gri",
+                16, 320, true, "Rechin taur"));
+        listaRechini.add(new Rechin("Mikasa", "Isurus oxyrinchus", 250.0, 400.0, "Albastru metalic",
+                12, 250, true, "Rechin mako"));
+        listaRechini.add(new Rechin("Himeno-senpai", "Cetorhinus maximus", 5000.0, 1000.0, "Gri-maroniu",
+                50, 400, false, "Rechin uriaș"));
+        listaRechini.add(new Rechin("Aki", "Ginglymostoma cirratum", 150.0, 300.0, "Galben-maroniu",
+                25, 200, false, "Rechin doică"));
+        listaRechini.add(new Rechin("Beam", "Prionace glauca", 200.0, 380.0, "Albastru intens",
+                20, 280, true, "Rechin albastru"));
+        listaRechini.add(new Rechin("Reno", "Alopias vulpinus", 350.0, 600.0, "Gri-albăstrui",
+                18, 240, false, "Rechin vulpe"));
+    }
 
     // Inițializare vector pești tropicali cu 10 instanțe
     private static void initializeazaPesti() {
@@ -265,6 +326,22 @@ public class Main {
                 8, true, 2, "Spiralată mare", 0.3));
     }
 
+
+
+    // Afișare balene
+    private static void afiseazaBalene() {
+        for (int i = 0; i < listaBalene.size(); i++) {
+            System.out.println((i + 1) + ". " + listaBalene.get(i));
+        }
+    }
+
+    // Afișare rechini
+    private static void afiseazaRechini() {
+        for (int i = 0; i < listaRechini.size(); i++) {
+            System.out.println((i + 1) + ". " + listaRechini.get(i));
+        }
+    }
+
     // Afișare pești tropicali
     private static void afiseazaPesti() {
         for (int i = 0; i < listaPesti.size(); i++) {
@@ -302,8 +379,57 @@ public class Main {
     }*/
 
     // Filtrare balene după 2 condiții
+    private static void filtreazaBalene(Scanner scanner) {
+        System.out.println("Introduceți criteriile de filtrare pentru balene:");
+
+        System.out.print("1. Greutate minimă (kg): ");
+        double greutateMin = scanner.nextDouble();
+
+        System.out.print("2. Adâncime maximă minimă (m): ");
+        int adancimeMin = scanner.nextInt();
+
+        System.out.println("\n--- Balene care satisfac ambele condiții ---");
+        boolean gasit = false;
+
+        for (Balena balena : listaBalene) {
+            if (balena.getGreutate() >= greutateMin && balena.getAdancimeMaxima() >= adancimeMin) {
+                System.out.println("✓ " + balena.getNume() + " - Greutate: " + balena.getGreutate() +
+                        "kg, Adâncime max: " + balena.getAdancimeMaxima() + "m");
+                gasit = true;
+            }
+        }
+
+        if (!gasit) {
+            System.out.println("Nu există balene care satisfac aceste condiții.");
+        }
+    }
 
     // Filtrare rechini după 2 condiții
+    private static void filtreazaRechini(Scanner scanner) {
+        System.out.println("Introduceți criteriile de filtrare pentru rechini:");
+
+        System.out.print("1. Este periculos? (true/false): ");
+        boolean periculos = scanner.nextBoolean();
+
+        System.out.print("2. Număr minim de dinți: ");
+        int numarDintiMin = scanner.nextInt();
+
+        System.out.println("\n--- Rechini care satisfac ambele condiții ---");
+        boolean gasit = false;
+
+        for (Rechin rechin : listaRechini) {
+            if (rechin.isPericulos() == periculos && rechin.getNumarDinti() >= numarDintiMin) {
+                System.out.println("✓ " + rechin.getNume() + " - Periculos: " + rechin.isPericulos() +
+                        ", Număr dinți: " + rechin.getNumarDinti());
+                gasit = true;
+            }
+        }
+
+        if (!gasit) {
+            System.out.println("Nu există rechini care satisfac aceste condiții.");
+        }
+    }
+
 
     // Filtrare pești tropicali după 2 condiții
     private static void filtreazaPesti(Scanner scanner) {
