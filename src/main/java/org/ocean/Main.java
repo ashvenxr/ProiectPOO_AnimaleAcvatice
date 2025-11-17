@@ -7,7 +7,6 @@ import java.util.Scanner;
 public class Main {
     // ArrayList pentru cele 4 clase
     //.
-
     private static ArrayList<PestiTropicali> listaPesti = new ArrayList<>();
     private static ArrayList<Moluste> listaMoluste = new ArrayList<>();
 
@@ -265,12 +264,6 @@ public class Main {
         listaMoluste.add(new Moluste("Conch", "Strombus gigas", 2.5, 35.0, "Roz și alb",
                 8, true, 2, "Spiralată mare", 0.3));
     }
-
-    //.
-
-    // Afișare balene
-
-    // Afișare rechini
 
     // Afișare pești tropicali
     private static void afiseazaPesti() {
