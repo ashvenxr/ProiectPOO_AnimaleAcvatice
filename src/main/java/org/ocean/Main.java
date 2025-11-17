@@ -1,8 +1,20 @@
 package org.ocean;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 // Clasa de test
 public class Main {
+    // ArrayList pentru cele 4 clase
+    //.
+    private static ArrayList<PestiTropicali> listaPesti = new ArrayList<>();
+    private static ArrayList<Moluste> listaMoluste = new ArrayList<>();
+
     public static void main(String[] args) {
+        /*
+
+        // ~ TESTARE CERINTE 1-2
+
         System.out.println("~ TEST CONSTRUCTORI - ANIMALE ACVATICE ~\n");
 
         System.out.println("========== BALENA ==========\n");
@@ -168,5 +180,180 @@ public class Main {
         System.out.println("  - Număr tentacule: " + mollusca2.getNumarTentacule());
         System.out.println("  - Tip cochilie: " + mollusca2.getTipCochilie());
         System.out.println("  - Viteză mișcare: " + mollusca2.getVitezaMiscare() + " km/h");
+
+        */
+
+        // ~ CERINTELE 3-4 ~
+        // Populam vectorii cu 10 instanțe fiecare
+        //.
+        initializeazaPesti();
+        initializeazaMoluste();
+
+        // Afisare instante
+
+        //.
+
+        System.out.println("=== LISTA PEȘTI TROPICALI ===");
+        afiseazaPesti();
+
+        System.out.println("\n=== LISTA MOLUSTE ===");
+        afiseazaMoluste();
+
+        // Filtrare cu conditii de la utilizator
+        Scanner scanner = new Scanner(System.in);
+
+        //.
+
+        System.out.println("\n=== FILTRARE PEȘTI TROPICALI ===");
+        filtreazaPesti(scanner);
+
+        System.out.println("\n=== FILTRARE MOLUSTE ===");
+        filtreazaMoluste(scanner);
+
+        scanner.close();
+    }
+
+    // Inițializare vector balene cu 10 instanțe
+
+    // Inițializare vector rechini cu 10 instanțe
+
+    // Inițializare vector pești tropicali cu 10 instanțe
+    private static void initializeazaPesti() {
+        listaPesti.add(new PestiTropicali("Nemo", "Amphiprion ocellaris", 0.05, 8.0, "Portocaliu cu alb",
+                2, "Rotunjite", false, 26.0, "Recif de corali"));
+        listaPesti.add(new PestiTropicali("Dory", "Paracanthurus hepatus", 0.6, 30.0, "Albastru și negru",
+                5, "Triunghiulare", false, 25.0, "Recif tropical"));
+        listaPesti.add(new PestiTropicali("Scorpion", "Pterois volitans", 1.2, 38.0, "Roșu cu alb",
+                3, "Lungi și veninoase", true, 27.0, "Recif stâncos"));
+        listaPesti.add(new PestiTropicali("Angel", "Pomacanthus imperator", 1.5, 40.0, "Albastru cu galben",
+                8, "Înalte", false, 26.5, "Recif adânc"));
+        listaPesti.add(new PestiTropicali("Butterfly", "Chaetodon auriga", 0.15, 20.0, "Galben cu negru",
+                4, "Rotunjite", false, 25.5, "Recif de corali"));
+        listaPesti.add(new PestiTropicali("Tang", "Zebrasoma flavescens", 0.25, 20.0, "Galben strălucitor",
+                6, "Triunghiulare", false, 26.0, "Recif tropical"));
+        listaPesti.add(new PestiTropicali("Mandarin", "Synchiropus splendidus", 0.08, 6.0, "Multicolor",
+                1, "Mici și colorate", false, 24.0, "Recif cu alge"));
+        listaPesti.add(new PestiTropicali("Blenny", "Ecsenius bicolor", 0.03, 10.0, "Portocaliu și albastru",
+                3, "Lungi și subțiri", false, 25.0, "Recif stâncos"));
+        listaPesti.add(new PestiTropicali("Puffer", "Arothron meleagris", 2.0, 50.0, "Negru cu puncte albe",
+                7, "Rotunjite", true, 27.0, "Recif adânc"));
+        listaPesti.add(new PestiTropicali("Wrasse", "Thalassoma lunare", 0.5, 25.0, "Verde și albastru",
+                4, "Lungi", false, 26.0, "Recif de corali"));
+    }
+
+    // Inițializare vector moluste cu 10 instanțe
+    private static void initializeazaMoluste() {
+        listaMoluste.add(new Moluste("Octavia", "Octopus vulgaris", 3.0, 60.0, "Maro-roșcat",
+                2, false, 8, "Fără cochilie", 5.0));
+        listaMoluste.add(new Moluste("Squidward", "Loligo vulgaris", 1.5, 40.0, "Alb transparent",
+                3, false, 10, "Fără cochilie", 8.0));
+        listaMoluste.add(new Moluste("Gary", "Helix pomatia", 0.03, 5.0, "Maro cu spirală",
+                1, true, 4, "Spiralată", 0.05));
+        listaMoluste.add(new Moluste("Shelley", "Pecten maximus", 0.5, 15.0, "Roz cu alb",
+                5, true, 0, "Bivalvă striată", 0.2));
+        listaMoluste.add(new Moluste("Clamy", "Mercenaria mercenaria", 0.2, 10.0, "Alb-cenușiu",
+                4, true, 0, "Bivalvă netedă", 0.1));
+        listaMoluste.add(new Moluste("Cuttlebert", "Sepia officinalis", 2.0, 45.0, "Maro variabil",
+                2, false, 10, "Fără cochilie", 6.5));
+        listaMoluste.add(new Moluste("Nautilus", "Nautilus pompilius", 1.0, 20.0, "Alb cu maro",
+                10, true, 90, "Spiralată camerată", 3.0));
+        listaMoluste.add(new Moluste("Sluggy", "Aplysia californica", 0.8, 30.0, "Roșu-maro",
+                1, false, 4, "Fără cochilie", 1.5));
+        listaMoluste.add(new Moluste("Mussel", "Mytilus edulis", 0.1, 8.0, "Negru-albăstrui",
+                3, true, 0, "Bivalvă alungită", 0.05));
+        listaMoluste.add(new Moluste("Conch", "Strombus gigas", 2.5, 35.0, "Roz și alb",
+                8, true, 2, "Spiralată mare", 0.3));
+    }
+
+    // Afișare pești tropicali
+    private static void afiseazaPesti() {
+        for (int i = 0; i < listaPesti.size(); i++) {
+            System.out.println((i + 1) + ". " + listaPesti.get(i));
+        }
+    }
+
+    // Afișare moluste
+    private static void afiseazaMoluste() {
+        for (int i = 0; i < listaMoluste.size(); i++) {
+            System.out.println((i + 1) + ". " + listaMoluste.get(i));
+        }
+    }
+
+    /*// EXEMPLU CU Object[] ARRAY
+    private static void exempluArrayObject() {
+        System.out.println("\n=== Object[] ARRAY ===");
+
+        // Declarare și inițializare array cu Object[]
+        Object[] arrayPesti = new Object[10];
+
+        // Populăm array-ul cu instanțe
+        arrayPesti[0] = new PestiTropicali("Test1", "Specie1", 0.1, 10.0, "Roșu", 2, "Normale", false, 25.0, "Recif");
+        arrayPesti[1] = new PestiTropicali("Test2", "Specie2", 0.2, 15.0, "Albastru", 3, "Lungi", false, 26.0, "Lagună");
+        arrayPesti[2] = new PestiTropicali("Test3", "Specie3", 0.3, 20.0, "Verde", 1, "Scurte", true, 24.0, "Ocean");
+
+        System.out.println("Primele 3 elemente din array:");
+        for (int i = 0; i < 3; i++) {
+            if (arrayPesti[i] != null) {
+
+                PestiTropicali peste = (PestiTropicali) arrayPesti[i]; // cast la tipul corect
+                System.out.println((i + 1) + ". " + peste);
+            }
+        }
+    }*/
+
+    // Filtrare balene după 2 condiții
+
+    // Filtrare rechini după 2 condiții
+
+    // Filtrare pești tropicali după 2 condiții
+    private static void filtreazaPesti(Scanner scanner) {
+        System.out.println("Introduceți criteriile de filtrare pentru pești:");
+
+        System.out.print("1. Greutate minimă (kg): ");
+        double greutateMin = scanner.nextDouble();
+
+        System.out.print("2. Lungime minimă (cm): ");
+        double lungimeMin = scanner.nextDouble();
+
+        System.out.println("\n--- Pești care satisfac ambele condiții ---");
+        boolean gasit = false;
+
+        for (PestiTropicali peste : listaPesti) {
+            if (peste.getGreutate() >= greutateMin && peste.getLungime() >= lungimeMin) {
+                System.out.println("✓ " + peste.getNume() + " - Greutate: " + peste.getGreutate() +
+                        "kg, Lungime: " + peste.getLungime() + "cm");
+                gasit = true;
+            }
+        }
+
+        if (!gasit) {
+            System.out.println("Nu există pești care satisfac aceste condiții.");
+        }
+    }
+
+    // Filtrare moluste după 2 condiții
+    private static void filtreazaMoluste(Scanner scanner) {
+        System.out.println("Introduceți criteriile de filtrare pentru moluste:");
+
+        System.out.print("1. Au cochilie? (true/false): ");
+        boolean areCochilie = scanner.nextBoolean();
+
+        System.out.print("2. Număr minim de tentacule: ");
+        int numarTentaculeMin = scanner.nextInt();
+
+        System.out.println("\n--- Moluste care satisfac ambele condiții ---");
+        boolean gasit = false;
+
+        for (Moluste molusc : listaMoluste) {
+            if (molusc.isAreCochilie() == areCochilie && molusc.getNumarTentacule() >= numarTentaculeMin) {
+                System.out.println("✓ " + molusc.getNume() + " - Cochilie: " + molusc.isAreCochilie() +
+                        ", Tentacule: " + molusc.getNumarTentacule());
+                gasit = true;
+            }
+        }
+
+        if (!gasit) {
+            System.out.println("Nu există moluste care satisfac aceste condiții.");
+        }
     }
 }
