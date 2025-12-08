@@ -1,7 +1,9 @@
 package org.ocean;
 
+import java.io.Serializable;
+
 // Clasa abstractă AnimaleAcvatice
-abstract class AnimaleAcvatice {
+abstract class AnimaleAcvatice implements Serializable {
     private String nume;
     private String specie;
     private double greutate;
