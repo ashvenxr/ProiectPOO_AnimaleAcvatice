@@ -68,7 +68,7 @@ public class FileManager {
         System.out.println("=============================================\n");
     }
 
-     //Citește toate listele de animale din fișiere
+    //Citește toate listele de animale din fișiere
     @SuppressWarnings("unchecked")
     public void citesteToateDatele() {
         System.out.println("\n========== CITIRE DATE DIN FIȘIERE ==========");

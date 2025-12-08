@@ -54,7 +54,9 @@ public class OceanGUI extends JFrame {
         criteriiPanel.add(new JLabel("Greutate minimă (kg):"), gbc);
         gbc.gridx = 1;
         JTextField greutateField = new JTextField(15);
+        greutateField.setText("100");
         criteriiPanel.add(greutateField, gbc);
+
 
         // Adâncime maximă minimă
         gbc.gridx = 0; gbc.gridy = 1;

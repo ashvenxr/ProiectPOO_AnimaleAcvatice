@@ -2,15 +2,14 @@ package org.ocean;
 
 // Clasa PestiTropicali
 class PestiTropicali extends AnimaleAcvatice {
+
     private String tipAripioare;
     private boolean veninosi;
     private double temperaturaOptima;
     private String habitatRecif;
 
-    // Constructor fără argumente
     public PestiTropicali() {
         super();
-        // Peștii tropicali nu sunt mamifere, sunt vertebrate cu reproducere ovipară
         super.setMamifer(false);
         super.setVertebrat(true);
         super.setModReproducere("Ovipar");
@@ -20,7 +19,6 @@ class PestiTropicali extends AnimaleAcvatice {
         this.habitatRecif = "Necunoscut";
     }
 
-    // Constructor cu toate argumentele
     public PestiTropicali(String nume, String specie, double greutate, double lungime, String culoare,
                           int varsta, String tipAripioare, boolean veninosi,
                           double temperaturaOptima, String habitatRecif) {
@@ -31,7 +29,6 @@ class PestiTropicali extends AnimaleAcvatice {
         this.habitatRecif = habitatRecif;
     }
 
-    // Constructor de copiere
     public PestiTropicali(PestiTropicali other) {
         super(other);
         this.tipAripioare = other.tipAripioare;
@@ -40,13 +37,11 @@ class PestiTropicali extends AnimaleAcvatice {
         this.habitatRecif = other.habitatRecif;
     }
 
-    // Getters
     public String getTipAripioare() { return tipAripioare; }
     public boolean isVeninosi() { return veninosi; }
     public double getTemperaturaOptima() { return temperaturaOptima; }
     public String getHabitatRecif() { return habitatRecif; }
 
-    // Setters
     public void setTipAripioare(String tipAripioare) { this.tipAripioare = tipAripioare; }
     public void setVeninosi(boolean veninosi) { this.veninosi = veninosi; }
     public void setTemperaturaOptima(double temperaturaOptima) { this.temperaturaOptima = temperaturaOptima; }

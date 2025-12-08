@@ -1,5 +1,4 @@
 package org.ocean;
-
 import java.io.Serializable;
 
 // Clasa abstractă AnimaleAcvatice

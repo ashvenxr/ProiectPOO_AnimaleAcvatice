@@ -2,15 +2,14 @@ package org.ocean;
 
 // Clasa Moluste
 class Moluste extends AnimaleAcvatice {
+
     private boolean areCochilie;
     private int numarTentacule;
     private String tipCochilie;
     private double vitezaMiscare;
 
-    // Constructor fără argumente
     public Moluste() {
         super();
-        // Molustele nu sunt mamifere, nu sunt vertebrate și au reproducere ovipară
         super.setMamifer(false);
         super.setVertebrat(false);
         super.setModReproducere("Ovipar");
@@ -20,7 +19,6 @@ class Moluste extends AnimaleAcvatice {
         this.vitezaMiscare = 0.0;
     }
 
-    // Constructor cu toate argumentele
     public Moluste(String nume, String specie, double greutate, double lungime, String culoare,
                    int varsta, boolean areCochilie, int numarTentacule,
                    String tipCochilie, double vitezaMiscare) {
@@ -31,7 +29,6 @@ class Moluste extends AnimaleAcvatice {
         this.vitezaMiscare = vitezaMiscare;
     }
 
-    // Constructor de copiere
     public Moluste(Moluste other) {
         super(other);
         this.areCochilie = other.areCochilie;
@@ -40,13 +37,11 @@ class Moluste extends AnimaleAcvatice {
         this.vitezaMiscare = other.vitezaMiscare;
     }
 
-    // Getters
     public boolean isAreCochilie() { return areCochilie; }
     public int getNumarTentacule() { return numarTentacule; }
     public String getTipCochilie() { return tipCochilie; }
     public double getVitezaMiscare() { return vitezaMiscare; }
 
-    // Setters
     public void setAreCochilie(boolean areCochilie) { this.areCochilie = areCochilie; }
     public void setNumarTentacule(int numarTentacule) { this.numarTentacule = numarTentacule; }
     public void setTipCochilie(String tipCochilie) { this.tipCochilie = tipCochilie; }
